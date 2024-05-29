@@ -1,0 +1,130 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>굴삭기 사용 승인 웹 애플리케이션</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.2/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link href="styles.css" rel="stylesheet">
+</head>
+<body>
+    <!-- 홈 화면 -->
+    <div class="container" id="homeScreen">
+        <h1 class="text-center mt-5">굴삭기 사용 승인</h1>
+        <div class="text-center mt-4">
+            <button class="btn btn-primary" onclick="showPhotoScreen()">사진 작업</button>
+            <button class="btn btn-secondary" onclick="showChecklistScreen()">체크리스트 작업</button>
+        </div>
+        <div class="text-center mt-4">
+            <button class="btn btn-info">보고서 미리보기</button>
+        </div>
+        <div class="text-center mt-1">
+            <button class="btn btn-success">PDF 저장</button>
+        </div>
+    </div>
+
+    <!-- 사진 작업 화면 -->
+    <div class="container" id="photoScreen" style="display: none;">
+        <div class="navbar d-flex justify-content-between">
+            <button class="btn btn-light" onclick="showHomeScreen()">홈</button>
+            <button class="btn btn-light" onclick="showChecklistScreen()">체크리스트 작업</button>
+        </div>
+        <h2 class="text-center mt-4">사진 작업</h2>
+        <!-- 그림 형식: 굴삭기 이미지와 사진 업로드 버튼 -->
+        <div class="text-center mt-3">
+            <div id="excavatorImage" class="position-relative">
+                <img src="excavator.jpg" alt="굴삭기" class="img-fluid">
+                <button class="btn-upload-photo position-absolute" style="top: 10%; left: 25%;" onclick="uploadPhoto(1)">주요 구조부 상태</button>
+                <button class="btn-upload-photo position-absolute" style="top: 55%; left: 15%;" onclick="uploadPhoto(2)">버킷 연결 안전핀</button>
+                <button class="btn-upload-photo position-absolute" style="top: 60%; left: 20%;" onclick="uploadPhoto(3)">버킷 훅 이탈 방지 장치</button>
+                <button class="btn-upload-photo position-absolute" style="top: 40%; left: 45%;" onclick="uploadPhoto(4)">운전석 조작 장치 상태</button>
+                <button class="btn-upload-photo position-absolute" style="top: 35%; left: 60%;" onclick="uploadPhoto(5)">운전자 시야 확보 (유리, 후사경)</button>
+                <button class="btn-upload-photo position-absolute" style="top: 55%; left: 80%;" onclick="uploadPhoto(6)">후진 경보 장치 & 후방 카메라</button>
+                <button class="btn-upload-photo position-absolute" style="top: 70%; left: 75%;" onclick="uploadPhoto(7)">타이어 손상, 마모 상태</button>
+            </div>
+        </div>
+        <!-- 사진 작업 상태 -->
+        <div class="text-center mt-0">
+            <p>완료: <span id="completedPhotos">0</span>/7</p>
+        </div>
+        <!-- 표 형식: 참고 이미지와 사진 업로드 버튼 -->
+        <div class="container mt-4">
+            <div class="row mb-4">
+                <div class="col-12 text-center mb-2 font-weight-bold">주요 구조부 상태</div>
+                <div class="col-md-6 text-center">
+                    <img src="주요 구조부 상태.jpg" alt="주요 구조부 상태" class="img-fluid">
+                </div>
+                <div class="col-md-6 text-center">
+                    <div class="cell-upload-photo" data-id="1" onclick="uploadPhoto(1)"></div>
+                </div>
+            </div>
+            <div class="row mb-4">
+                <div class="col-12 text-center mb-2 font-weight-bold">버킷 연결 안전핀</div>
+                <div class="col-md-6 text-center">
+                    <img src="버킷 연결 안전핀.jpg" alt="버킷 연결 안전핀" class="img-fluid">
+                </div>
+                <div class="col-md-6 text-center">
+                    <div class="cell-upload-photo" data-id="2" onclick="uploadPhoto(2)"></div>
+                </div>
+            </div>
+            <div class="row mb-4">
+                <div class="col-12 text-center mb-2 font-weight-bold">버킷 훅 이탈 방지 장치</div>
+                <div class="col-md-6 text-center">
+                    <img src="버킷 훅 이탈 방지 장치.jpg" alt="버킷 훅 이탈 방지 장치" class="img-fluid">
+                </div>
+                <div class="col-md-6 text-center">
+                    <div class="cell-upload-photo" data-id="3" onclick="uploadPhoto(3)"></div>
+                </div>
+            </div>
+            <div class="row mb-4">
+                <div class="col-12 text-center mb-2 font-weight-bold">운전석 조작 장치 상태</div>
+                <div class="col-md-6 text-center">
+                    <img src="운전석 조작 장치 상태.jpg" alt="운전석 조작 장치 상태" class="img-fluid">
+                </div>
+                <div class="col-md-6 text-center">
+                    <div class="cell-upload-photo" data-id="4" onclick="uploadPhoto(4)"></div>
+                </div>
+            </div>
+            <div class="row mb-4">
+                <div class="col-12 text-center mb-2 font-weight-bold">운전자 시야 확보 (유리, 후사경)</div>
+                <div class="col-md-6 text-center">
+                    <img src="운전자 시야 확보 (유리, 후사경).jpg" alt="운전자 시야 확보" class="img-fluid">
+                </div>
+                <div class="col-md-6 text-center">
+                    <div class="cell-upload-photo" data-id="5" onclick="uploadPhoto(5)"></div>
+                </div>
+            </div>
+            <div class="row mb-4">
+                <div class="col-12 text-center mb-2 font-weight-bold">후진 경보 장치 & 후방 카메라</div>
+                <div class="col-md-6 text-center">
+                    <img src="후진 경보 장치 & 후방 카메라.jpg" alt="후진 경보 장치 & 후방 카메라" class="img-fluid">
+                </div>
+                <div class="col-md-6 text-center">
+                    <div class="cell-upload-photo" data-id="6" onclick="uploadPhoto(6)"></div>
+                </div>
+            </div>
+            <div class="row mb-4">
+                <div class="col-12 text-center mb-2 font-weight-bold">타이어 손상, 마모 상태</div>
+                <div class="col-md-6 text-center">
+                    <img src="타이어 손상, 마모 상태.jpg" alt="타이어 손상, 마모 상태" class="img-fluid">
+                </div>
+                <div class="col-md-6 text-center">
+                    <div class="cell-upload-photo" data-id="7" onclick="uploadPhoto(7)"></div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- 체크리스트 작업 화면 -->
+    <div class="container" id="checklistScreen" style="display: none;">
+        <div class="navbar d-flex justify-content-between">
+            <button class="btn btn-light" onclick="showHomeScreen()">홈</button>
+            <button class="btn btn-light" onclick="showPhotoScreen()">사진 작업</button>
+        </div>
+        <h2 class="text-center mt-4">체크리스트 작업</h2>
+        <!-- 코드 작성 중 -->
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
