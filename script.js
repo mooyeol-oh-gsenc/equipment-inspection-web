@@ -29,9 +29,14 @@ function uploadPhoto(partId) {
                 uploadPhoto.style.backgroundImage = `url(${e.target.result})`;
                 uploadPhoto.style.border = 'none';
                 uploadPhoto.innerHTML = '';
-                // 완료된 사진 수 업데이트
+
+                // 업로드 완료된 부위 수 업데이트
                 const completedPhotos = document.getElementById('completedPhotos');
                 completedPhotos.textContent = parseInt(completedPhotos.textContent) + 1;
+                
+                // 업로드 완료된 부위 이름 업데이트
+                const partLabel = document.getElementById(`status-${partId}`);
+                partLabel.classList.add('completed');
             };
             reader.readAsDataURL(file);
         }

@@ -1,22 +1,25 @@
 /* Add your custom styles here */
 .btn-upload-photo {
-    width: 100px;
-    height: 100px;
-    border-radius: 50%;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    color: red;
+    width: 80px;
+    height: 40px;
+    border-radius: 20px;
+    color: white;
+    background-color: lightgray;
     cursor: pointer;
 }
 
-.cell-reference, .cell-upload {
-    display: flex;
-    flex-direction: column;
+.part-label {
+    background-color: white;
+    font-weight: bold;
+    color: lightcoral;
 }
 
-.photo-section {
-    margin-bottom: 15px;
+.part-label.completed {
+    color: green;
+}
+
+.part-label.completed::after {
+    content: ' ✔';
 }
 
 .cell-upload-photo {
@@ -27,6 +30,8 @@
     align-items: center;
     justify-content: center;
     cursor: pointer;
+    background-size: cover;
+    background-position: center;
 }
 
 .cell-upload-photo::before {
