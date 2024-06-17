@@ -54,7 +54,8 @@ html, body {
 }
 
 .form-container table {
-    border-collapse: collapse;
+    width: 100%;
+    table-layout: fixed;
 }
 
 .image-container {
