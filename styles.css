@@ -56,6 +56,29 @@ html, body {
     background-color: white;
 }
 
+.form-siteDate {
+    display: grid;
+    grid-template-columns: auto 1fr auto 1fr; /* 1fr: one fraction */
+    gap: 10px;
+    margin-bottom: 20px;
+}
+
+.form-siteDate input {
+    width: 100%;
+}
+
+.form-equipment {
+    text-align: center;
+    display: grid;
+    grid-template-columns: repeat(3, 1fr); /* 1fr: one fraction */
+    gap: 10px;
+}
+
+.form-equipment label,
+.form-equipment input {
+    width: 100%;
+}
+
 .image-container {
     margin-bottom: 20px;
     padding: 10px;
