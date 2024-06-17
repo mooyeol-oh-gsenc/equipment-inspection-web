@@ -37,6 +37,7 @@ html, body {
     display: flex;
     flex-direction: column;
     background-color: white;
+    overflow-x: hidden;
     overflow-y: auto;
 }
 
