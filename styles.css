@@ -42,14 +42,14 @@ html, body {
 }
 
 .title {
-    margin-bottom: 20px;
+    margin-bottom: 30px;
     padding: 10px;
     text-align: center;
     background-color: lightgray;
 }
 
 .form-container {
-    margin-bottom: 20px;
+    margin-bottom: 30px;
     padding: 10px;
     display: flex;
     flex-direction: column;
@@ -60,7 +60,7 @@ html, body {
     display: grid;
     grid-template-columns: auto 1fr auto 1fr; /* 1fr: one fraction */
     gap: 10px;
-    margin-bottom: 20px;
+    margin-bottom: 30px;
 }
 
 .form-siteDate input {
