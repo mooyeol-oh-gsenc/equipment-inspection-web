@@ -42,8 +42,10 @@ html, body {
 }
 
 .title {
-    margin-bottom: 10px;
+    margin-bottom: 20px;
+    padding: 10px;
     text-align: center;
+    background-color: lightgray;
 }
 
 .form-container {
@@ -51,12 +53,7 @@ html, body {
     padding: 10px;
     display: flex;
     flex-direction: column;
-    background-color: lightgray;
-}
-
-.form-container table {
-    width: 100%;
-    table-layout: fixed;
+    background-color: white;
 }
 
 .image-container {
