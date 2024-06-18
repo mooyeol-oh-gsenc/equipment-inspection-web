@@ -42,14 +42,14 @@ html, body {
 }
 
 .title {
-    margin-bottom: 30px;
+    margin-bottom: 40px;
     padding: 10px;
     text-align: center;
     background-color: lightgray;
 }
 
 .form-container {
-    margin-bottom: 30px;
+    margin-bottom: 40px;
     padding: 10px;
     display: flex;
     flex-direction: column;
@@ -60,7 +60,7 @@ html, body {
     display: grid;
     grid-template-columns: auto 1fr auto 1fr; /* 1fr: one fraction */
     gap: 10px;
-    margin-bottom: 30px;
+    margin-bottom: 20px;
 }
 
 .form-siteDate input {
@@ -85,6 +85,26 @@ html, body {
     display: flex;
     flex-direction: column;
     background-color: white;
+}
+
+.keyImage-wrapper {
+    position: relative; /* <-> inspectorButton: absolute */
+}
+
+.keyImage-image {
+    width: 100%;
+    height: auto;
+}
+
+.inspectorButton {
+    position: absolute; /* <-> keyImage-wrapper: relative */
+    padding: 2px 4px; /* TB LR */
+    border: 2px solid lightgray;
+    border-radius: 20px;
+    color: black;
+    background-color: rgba(256, 256, 256, 0.75);
+    font-weight: bold;
+    cursor: pointer;
 }
 
 #keyImage01 {
