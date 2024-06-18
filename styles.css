@@ -102,9 +102,15 @@ html, body {
     border: 2px solid lightgray;
     border-radius: 20px;
     color: black;
-    background-color: rgba(256, 256, 256, 0.75);
+    background-color: rgba(256, 256, 256);
     font-weight: bold;
     cursor: pointer;
+}
+
+.inspectorLine {
+    position: absolute;
+    width: 2px; /* Thickness */
+    background-color: black;
 }
 
 #keyImage01 {
