@@ -9,3 +9,6 @@ working
 
 # 과거 파일 무시
 old
+
+#Python 가상 환경 무시
+env

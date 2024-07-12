@@ -1,0 +1,93 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html, body {
+    height: 100%;
+    font-family: Arial, sans-serif;
+    background-color: lightgray;
+    overflow: hidden;
+}
+
+.nav-container {
+    max-width: 460px;
+    height: 40px;
+    flex: 0 0 50px; /* G S B */
+    margin: 0 auto; /* TB LR */
+    padding: 10px;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-evenly;
+    background-color: gray;
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    z-index: 1000;
+}
+
+.main-container {
+    max-width: 460px;
+    height: calc(100% - 100px);
+    margin: 40px auto 60px auto; /* T R B L */
+    padding: 20px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center; /* 주 축 정렬 */
+    align-items: center; /* 교차 축 정렬 */
+    background-color: white;
+    overflow-x: hidden;
+    overflow-y: auto;
+}
+
+.title {
+    margin-bottom: 20px;
+    text-align: center;
+    background-color: white;
+}
+
+.upload-preview {
+    width: 400px;
+    height: 300px;
+    border: 2px dashed lightgray;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-size: cover;
+    background-position: center;
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+
+.upload-preview .upload-text {
+    position: absolute;
+    color: lightgray;
+    font-size: 18px;
+}
+
+.main-container.uploaded .upload-preview {
+    border: 2px solid black;
+}
+
+.main-container.uploaded .upload-text {
+    display: none;
+}
+
+.footer-container {
+    max-width: 460px;
+    height: 60px;
+    flex: 0 0 50px; /* G S B */
+    margin: 0 auto; /* TB LR */
+    padding: 10px;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-evenly;
+    background-color: gray;
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    z-index: 1000;
+}

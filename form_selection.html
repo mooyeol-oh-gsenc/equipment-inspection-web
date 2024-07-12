@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>GS Inspector</title>
+    <link rel="stylesheet" href="styles_form_selection.css">
+</head>
+<body>
+    <div class="nav-container">
+        <button type="button">Home</button>
+        <button type="button">앱 설치</button>
+    </div>
+    <div class="main-container">
+        <h3 class="title">장비의 전체 모습을 촬영해주세요.</h3>
+        <input type="file" id="fileInput" accept="image/*" style="display:none" onchange="previewImage(event)">
+        <div class="upload-preview" onclick="document.getElementById('fileInput').click()">
+            <span class="upload-text">장비 사진 업로드</span>
+        </div>
+    </div>
+    <div class="footer-container">
+        <button type="button" onclick="location.href='inspection.html'">점검 시작</button>
+    </div>
+    <script src="scripts_form_selection.js"></script>
+</body>
+</html>

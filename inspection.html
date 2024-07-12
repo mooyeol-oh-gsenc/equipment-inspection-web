@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>GS Inspector</title>
+    <link rel="stylesheet" href="styles_inspection.css">
+</head>
+<body>
+    <div class="nav-container">
+        <button type="button">Home</button>
+        <button type="button">앱 설치</button>
+    </div>
+    <div class="main-container">
+        <div class="form-container">
+            <h3 class="title">작업시작 전 안전점검</h3>
+            <form>
+                <div class="form-siteDate">
+                    <label for="siteName">현장명:</label>
+                    <input type="text" id="siteName" placeholder="현장명 입력">
+                    <label for="date">점검일자:</label>
+                    <input type="date" id="date">
+                </div>
+                <div class="form-equipment">
+                    <label for="equipmentCompany">장비업체</label>
+                    <label for="equipmentModel">장비 모델명</label>
+                    <label for="registrationNumber">등록번호</label>
+                    <input type="text" id="equipmentCompany" placeholder="장비업체 입력">
+                    <input type="text" id="equipmentModel" placeholder="장비 모델명 입력">
+                    <input type="text" id="registrationNumber" placeholder="등록번호 입력">
+                </div>
+            </form>
+        </div>
+        <div class="image-container">
+            <div class="keyImage-wrapper">
+                <img class="keyImage-image" id="keyImage01" src="/images/key1_excavator.png" alt="굴착기">
+                <button class="inspectorButton" id="btn-hydraulicSystem" style="top: 25%; left: 20%;">유압장치</button>
+                <button class="inspectorButton" id="btn-controlBrake" style="top: 30%; right: 0%;">조종/제동장치</button>
+                <button class="inspectorButton" id="btn-safetyLever" style="top: 40%; right: 0%;">안전레버</button>
+                <!-- <div class="inspectorLine" id="line-hydraulicSystem" style="top: 25%; left: 20%; height: 30%;"></div>
+                <div class="inspectorLine" id="line-controlBrake" style="top: 30%; right: 23.5%; height: 20%;"></div>
+                <div class="inspectorLine" id="line-safetyLever" style="top: 40%; right: 0%; height: 10%;"></div> -->
+            </div>
+            <div class="keyImage-wrapper">
+                <img class="keyImage-image" id="keyImage02" src="/images/key2_excavator.png" alt="굴착기">
+            </div>
+        </div>
+    </div>
+    <div class="footer-container">
+        <button type="button">점검 기록 확인하기</button>
+    </div>
+    <script src="script.js"></script>
+</body>
+</html>
