@@ -12,3 +12,7 @@ old
 
 #Python 가상 환경 무시
 env
+
+#Python 파일 무시
+main.py
+create_tables.py
